@@ -18,10 +18,14 @@ steps:
 
 - name: images
   image: plugins/docker
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
   commands:
   - docker build -t test/one .
   
 - name: step3
   image: plugins/docker
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
   commands:
   - docker run -d -e 8090:5000 test/one
