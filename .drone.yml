@@ -17,11 +17,11 @@ steps:
   - dotnet test
 
 - name: images
-  # image: plugins/docker
+  image: plugins/docker
   commands:
   - docker build -t test/one .
   
 - name: step3
-  # image: plugins/docker
+  image: plugins/docker
   commands:
   - docker run -d -e 8090:5000 test/one
