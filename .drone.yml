@@ -13,9 +13,15 @@ steps:
 - name: build
   image: mcr.microsoft.com/dotnet/sdk:6.0
   commands:
-  - docker build -t test/test1 .
-  
-- name: run
-  image: mcr.microsoft.com/dotnet/sdk:6.0
+  - dotnet build
+  - dotnet test
+
+- name: images
+  image: plugins/docker
   commands:
-  - docker run -d -p 8090:5000 test/test1
+  - docker build -t test/one .
+  
+- name: images
+  image: plugins/docker
+  commands:
+  - docker run -d -e 8090:5000 test/one
