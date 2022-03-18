@@ -19,9 +19,9 @@ steps:
 - name: images
   image: plugins/docker
   commands:
-  - docker build -t test/one .
+  - sudo docker build -t test/one .
   
 - name: step3
   image: plugins/docker
   commands:
-  - docker run -d -e 8090:5000 test/one
+  - sudo docker run -d -e 8090:5000 test/one
