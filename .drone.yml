@@ -2,9 +2,17 @@ kind: pipeline
 type: docker
 name: default
 
+# steps:
+# - name: tobuild
+  # image: alpine
+  # commands:
+  # - echo hello
+  # - echo world
+  
 steps:
-- name: greeting
-  image: alpine
+- name: test
+  image: mcr.microsoft.com/dotnet/sdk:6.0
   commands:
+  - dotnet build
+  - dotnet test
   - echo hello
-  - echo world
