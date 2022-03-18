@@ -10,9 +10,12 @@ name: default
   # - echo world
   
 steps:
-- name: test
+- name: build
   image: mcr.microsoft.com/dotnet/sdk:6.0
   commands:
-  - dotnet build
-  - dotnet test
-  - echo hello
+  - docker build -t test/test1 .
+  
+- name: run
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  commands:
+  - docker run -d -p 8090:5000 test/test1
