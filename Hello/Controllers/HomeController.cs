@@ -10,7 +10,7 @@ namespace Hello.Controllers
         // GET: HomeController
         public ActionResult Index()
         {
-            return Content("Index3");
+            return Content("Index4");
         }
 
         //// GET: HomeController/Details/5
