@@ -18,6 +18,6 @@ steps:
     registry: localhost:5000
     repo: localhost:5000/helloworld
     tags: dev
-    dockerfile: Hello/Dockerfile
+    dockerfile: Dockerfile
     context: app
     insecure: false
