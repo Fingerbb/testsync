@@ -15,8 +15,8 @@ steps:
   pull: if-not-exists
   settings:
     mirror: https://nqz266l0.mirror.aliyuncs.com
-    registry: 192.168.137.200:5000
-    repo: 192.168.137.200:5000/helloworld
+    registry: 192.168.56.101:5000
+    repo: 192.168.56.101:5000/helloworld
     tags: helloworld
     dockerfile: Dockerfile
     context: .
