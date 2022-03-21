@@ -6,6 +6,8 @@ steps:
 - name: 发布 hello
   image: mcr.microsoft.com/dotnet/sdk:6.0
   pull: if-not-exists
+  settings:
+    mirror: https://nqz266l0.mirror.aliyuncs.com
   commands:
   - dotnet restore
   - dotnet publish --no-restore -c Release -o app --no-restore
