@@ -9,8 +9,8 @@ steps:
   commands:
   - dotnet restore
   - dotnet publish --no-restore -c Release -o app --no-restore
-  
- - name: 构建镜像
+
+- name: 构建镜像
   image: plugins/docker
   pull: if-not-exists
   settings:
