@@ -2,30 +2,40 @@ kind: pipeline
 type: docker
 name: default
 
-# steps:
-# - name: tobuild
-  # image: alpine
-  # commands:
-  # - echo hello
-  # - echo world
-  
 steps:
-- name: build
+- name: 发布 hello
   image: mcr.microsoft.com/dotnet/sdk:6.0
+  pull: if-not-exists
   commands:
-  - dotnet build
-  - dotnet test
+  - dotnet restore
+  - dotnet publish --no-restore -c Release -o app --no-restore
 
-- name: images
+- name: 构建 APIProxyService 镜像
   image: plugins/docker
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
-  commands:
-  - docker build -t test/one .
-  
-- name: step3
-  image: plugins/docker
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
-  commands:
-  - docker run -d -e 8090:5000 test/one
+  pull: if-not-exists
+  settings:
+    mirror: https://nqz266l0.mirror.aliyuncs.com
+    registry: localhost:5000
+    repo: localhost:5000/helloworld
+    tags: dev
+    dockerfile: Hello/Dockerfile
+    context: app
+    insecure: false
+
+- name: 部署 APIProxyService 服务
+  image: appleboy/drone-ssh
+  pull: if-not-exists
+  settings:
+    host: localhost
+    username:
+      from_secret: root
+    password:
+      from_secret: 123456
+    port: 22
+    script_stop: true
+    script:
+      - cd /mnt/helloworld
+      - docker-compose up -d
+
+node:
+  feature: dotnetcore

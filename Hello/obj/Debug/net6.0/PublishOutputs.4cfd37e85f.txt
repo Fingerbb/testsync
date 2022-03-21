@@ -1,0 +1,11 @@
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Hello.exe
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\appsettings.Development.json
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\appsettings.json
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Hello.dll
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Hello.deps.json
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Hello.runtimeconfig.json
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Hello.pdb
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Microsoft.OpenApi.dll
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\TestProject\hello_world\Hello\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
