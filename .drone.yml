@@ -19,5 +19,5 @@ steps:
     repo: localhost:5000/helloworld
     tags: dev
     dockerfile: Dockerfile
-    context: app
+    context: .
     insecure: false
