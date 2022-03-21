@@ -28,9 +28,9 @@ steps:
   settings:
     host: 192.168.56.101
     username:
-      from_secret: root
+      from_secret: ssh_username
     password:
-      from_secret: 123456
+      from_secret: ssh_password
     port: 22
     script_stop: true
     script:
