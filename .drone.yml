@@ -38,6 +38,6 @@ steps:
     script:
       - cd /mnt/helloworld
       - docker-compose stop
-      - docker-compose -f rm 
-      - docker-compose -f pull 
+      - docker-compose rm -f
+      - docker-compose pull 
       - docker-compose up -d
