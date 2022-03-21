@@ -16,8 +16,8 @@ steps:
   settings:
     mirror: https://nqz266l0.mirror.aliyuncs.com
     registry: localhost:5000
-    repo: localhost:5000
-    tags: dev
+    repo: localhost:5000/helloworld
+    tags: helloworld
     dockerfile: Dockerfile
     context: .
-    insecure: false
+    insecure: true
