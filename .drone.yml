@@ -35,6 +35,6 @@ steps:
     script_stop: true
     script:
       - cd /mnt/helloworld
-      - docker-compose rm -f
-      - docker-compose pull -f
+      - docker-compose -f rm 
+      - docker-compose -f pull 
       - docker-compose up -d
